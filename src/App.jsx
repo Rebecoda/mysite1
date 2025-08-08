@@ -2,6 +2,7 @@ import React from 'react';
 import { colors, typography } from '../design-system/tokens/index.js';
 import {
   AvatarHero,
+  BioHeader,
   SocialStrip,
   ResumeTimeline,
   PortfolioGallery,
@@ -21,6 +22,7 @@ function PersonalWebsite() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <AvatarHero />
+        <BioHeader />
         <SocialStrip />
         <ResumeTimeline />
         <PortfolioGallery />

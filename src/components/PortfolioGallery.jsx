@@ -53,7 +53,10 @@ const PortfolioGallery = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.0 }}
-      style={{ marginBottom: spacing.section }}
+      style={{ 
+        marginBottom: spacing[16], // 与联系我组件保持统一间距
+        marginTop: spacing[8], // 与工作经历保持适当距离
+      }}
     >
       <h2 style={textStyles.h2} className="text-center mb-12">作品集</h2>
       
@@ -66,12 +69,18 @@ const PortfolioGallery = () => {
             transition={{ delay: 1.1 + index * 0.1 }}
             className="group cursor-pointer"
           >
-            <div 
-              className="rounded-lg border overflow-hidden transition-all duration-300 hover:shadow-lg"
+            <motion.div 
+              className="rounded-lg border overflow-hidden cursor-pointer"
               style={{ 
                 backgroundColor: colors.background.tertiary,
                 borderColor: colors.border.light
               }}
+              whileHover={{ 
+                y: -6,
+                scale: 1.02,
+                boxShadow: `0 8px 24px ${colors.opacity['12']}`,
+              }}
+              transition={{ duration: 0.2, ease: "ease-out" }}
             >
               {/* 图片占位符 */}
               <div 
@@ -107,7 +116,7 @@ const PortfolioGallery = () => {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

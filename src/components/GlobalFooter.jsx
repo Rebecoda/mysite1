@@ -13,7 +13,7 @@ const GlobalFooter = () => {
       className="border-t pt-8"
       style={{ 
         borderColor: colors.border.light,
-        marginTop: spacing.section
+        marginTop: spacing[8], // 与联系我组件保持统一间距
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,41 +21,28 @@ const GlobalFooter = () => {
           <p 
             className="mb-4"
             style={{ 
-              ...textStyles.bodySmall,
-              color: colors.text.secondary
+              color: colors.text.tertiary,
+              fontFamily: typography.fontFamily.sans,
+              fontSize: typography.fontSize.sm,
+              fontWeight: typography.fontWeight.light,
+              lineHeight: typography.lineHeight.label,
             }}
           >
-            © {currentYear} 张三. 保留所有权利.
+            © 2025 潘雍静（Rebecca） · 深圳 · 联系：13392871283@163.com
           </p>
           
-          <div 
-            className="text-sm"
-            style={{ color: colors.text.tertiary }}
+          <p 
+            style={{ 
+              color: colors.text.tertiary,
+              fontFamily: typography.fontFamily.sans,
+              fontSize: typography.fontSize.xs,
+              fontWeight: typography.fontWeight.light,
+              lineHeight: typography.lineHeight.label,
+              opacity: 0.6,
+            }}
           >
-            <span>由 React + Vite 构建</span>
-            <span className="mx-2">•</span>
-            <span>设计系统驱动</span>
-            <span className="mx-2">•</span>
-            <span>极简主义</span>
-          </div>
-          
-          <div className="mt-4">
-            <a 
-              href="#"
-              className="text-sm transition-colors duration-200 hover:underline"
-              style={{ color: colors.text.secondary }}
-            >
-              隐私政策
-            </a>
-            <span className="mx-2" style={{ color: colors.text.tertiary }}>•</span>
-            <a 
-              href="#"
-              className="text-sm transition-colors duration-200 hover:underline"
-              style={{ color: colors.text.secondary }}
-            >
-              使用条款
-            </a>
-          </div>
+            简历仅供参考，转载请联系作者。
+          </p>
         </div>
       </div>
     </motion.footer>

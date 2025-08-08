@@ -31,7 +31,10 @@ const ContactSection = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2 }}
-      style={{ marginBottom: spacing.section }}
+      style={{ 
+        marginBottom: spacing[16], // 与页脚保持统一间距
+        marginTop: spacing[8], // 与作品集保持适当距离
+      }}
     >
       <h2 style={textStyles.h2} className="text-center mb-12">联系我</h2>
       
@@ -103,14 +106,20 @@ const ContactSection = () => {
             </div>
             
             <div className="flex justify-center">
-              <Button 
-                type="submit" 
-                variant="primary" 
-                size="lg"
-                icon={<PaperPlaneRight />}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2, ease: "ease-out" }}
               >
-                发送留言
-              </Button>
+                <Button 
+                  type="submit" 
+                  variant="primary" 
+                  size="lg"
+                  icon={<PaperPlaneRight />}
+                >
+                  发送留言
+                </Button>
+              </motion.div>
             </div>
           </form>
           
@@ -122,17 +131,22 @@ const ContactSection = () => {
             >
               或者直接联系我：
             </div>
-            <a
-              href="mailto:example@email.com"
-              className="inline-flex items-center mt-2 px-4 py-2 rounded-lg transition-colors duration-200"
+            <motion.a
+              href="mailto:13392871283@163.com"
+              className="inline-flex items-center mt-2 px-4 py-2 rounded-lg"
               style={{ 
                 backgroundColor: colors.background.primary,
                 color: colors.text.primary
               }}
+              whileHover={{ 
+                scale: 1.02,
+                backgroundColor: colors.primary[400],
+              }}
+              transition={{ duration: 0.2, ease: "ease-out" }}
             >
               <EnvelopeSimple size={16} className="mr-2" />
-              example@email.com
-            </a>
+              13392871283@163.com
+            </motion.a>
           </div>
         </div>
       </div>
