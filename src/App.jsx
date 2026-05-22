@@ -6,7 +6,6 @@ import {
   SocialStrip,
   ResumeTimeline,
   PortfolioGallery,
-  ContactSection,
   GlobalFooter
 } from './components/index.js';
 
@@ -26,7 +25,6 @@ function PersonalWebsite() {
         <SocialStrip />
         <ResumeTimeline />
         <PortfolioGallery />
-        <ContactSection />
       </div>
       <GlobalFooter />
     </div>

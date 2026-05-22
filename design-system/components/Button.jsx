@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { tv } from 'tailwind-variants';
-import { colors, spacing, typography } from '../tokens/index.js';
+import { typography } from '../tokens/index.js';
 
 // 基于设计稿的按钮变体
 const buttonVariants = tv({
@@ -106,7 +106,7 @@ const Button = React.forwardRef(({
   };
 
   return (
-    <motion.button
+    <Motion.button
       ref={ref}
       className={buttonClasses}
       disabled={disabled || loading}
@@ -119,7 +119,7 @@ const Button = React.forwardRef(({
       {...props}
     >
       {loading && (
-        <motion.div
+        <Motion.div
           className="w-4 h-4 border-2 border-current border-t-transparent rounded-full mr-2"
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
@@ -133,7 +133,7 @@ const Button = React.forwardRef(({
       </span>
       
       {!loading && iconPosition === 'right' && renderIcon()}
-    </motion.button>
+    </Motion.button>
   );
 });
 

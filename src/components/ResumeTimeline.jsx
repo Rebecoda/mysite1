@@ -132,7 +132,8 @@ const ResumeTimeline = () => {
                       className="mb-3"
                       style={{
                         ...textStyles.caption,
-                        color: colors.text.tertiary,
+                        color: colors.text.secondary,
+                        fontSize: typography.fontSize.md,
                       }}
                     >
                       Experience
@@ -141,8 +142,8 @@ const ResumeTimeline = () => {
                       style={{
                         color: colors.text.primary,
                         fontFamily: typography.fontFamily.sans,
-                        fontSize: typography.fontSize['2xl'],
-                        fontWeight: typography.fontWeight.light,
+                        fontSize: typography.fontSize['3xl'],
+                        fontWeight: typography.fontWeight.normal,
                         lineHeight: typography.lineHeight.tight,
                         letterSpacing: typography.letterSpacing.normal,
                       }}
@@ -158,7 +159,7 @@ const ResumeTimeline = () => {
                       borderColor: colors.border.light,
                       backgroundColor: colors.background.primary,
                       fontFamily: typography.fontFamily.sans,
-                      fontSize: typography.fontSize.xs,
+                      fontSize: typography.fontSize.md,
                       fontWeight: typography.fontWeight.normal,
                       lineHeight: typography.lineHeight.label,
                       letterSpacing: typography.letterSpacing.wider,
@@ -176,10 +177,10 @@ const ResumeTimeline = () => {
                 <div
                   className="mb-5"
                   style={{
-                    color: colors.text.secondary,
+                    color: colors.text.primary,
                     fontFamily: typography.fontFamily.sans,
-                    fontSize: typography.fontSize.lg,
-                    fontWeight: typography.fontWeight.light,
+                    fontSize: typography.fontSize.xl,
+                    fontWeight: typography.fontWeight.normal,
                     lineHeight: typography.lineHeight.snug,
                     letterSpacing: typography.letterSpacing.wide,
                   }}
@@ -190,10 +191,10 @@ const ResumeTimeline = () => {
                 <p
                   className="mb-6"
                   style={{
-                    color: colors.text.tertiary,
+                    color: colors.text.secondary,
                     fontFamily: typography.fontFamily.sans,
-                    fontSize: typography.fontSize.md,
-                    fontWeight: typography.fontWeight.light,
+                    fontSize: typography.fontSize.lg,
+                    fontWeight: typography.fontWeight.normal,
                     lineHeight: typography.lineHeight.body,
                     letterSpacing: typography.letterSpacing.wide,
                   }}
@@ -210,10 +211,10 @@ const ResumeTimeline = () => {
                       />
                       <span
                         style={{
-                          color: colors.text.secondary,
+                          color: colors.text.primary,
                           fontFamily: typography.fontFamily.sans,
-                          fontSize: typography.fontSize.md,
-                          fontWeight: typography.fontWeight.light,
+                          fontSize: typography.fontSize.lg,
+                          fontWeight: typography.fontWeight.normal,
                           lineHeight: typography.lineHeight.body,
                           letterSpacing: typography.letterSpacing.wide,
                         }}

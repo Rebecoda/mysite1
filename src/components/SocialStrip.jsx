@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { EnvelopeSimple } from 'phosphor-react';
 import { colors, spacing, typography } from '../../design-system/tokens/index.js';
 
@@ -35,6 +35,37 @@ const SocialStrip = () => {
     } catch (err) {
       console.error('复制失败:', err);
     }
+  };
+
+  const socialButtonStyle = {
+    padding: '14px',
+    borderRadius: '14px',
+    border: `1px solid ${colors.border.medium}`,
+    color: colors.text.primary,
+    backgroundColor: colors.background.tertiary,
+    textDecoration: 'none',
+    display: 'block',
+    boxShadow: `0 8px 20px rgba(0, 0, 0, 0.18)`,
+  };
+
+  const handleSocialEnter = (e) => {
+    e.currentTarget.style.color = colors.text.inverse;
+    e.currentTarget.style.backgroundColor = colors.text.primary;
+    e.currentTarget.style.borderColor = colors.text.primary;
+    e.currentTarget.style.boxShadow = `0 12px 28px ${colors.opacity['20']}`;
+  };
+
+  const handleSocialLeave = (e) => {
+    e.currentTarget.style.color = colors.text.primary;
+    e.currentTarget.style.backgroundColor = colors.background.tertiary;
+    e.currentTarget.style.borderColor = colors.border.medium;
+    e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.18)';
+  };
+
+  const handleExternalLink = (href) => (e) => {
+    e.preventDefault();
+    e.currentTarget.blur();
+    window.open(href, '_blank', 'noopener,noreferrer');
   };
 
   const socialLinks = [
@@ -73,7 +104,7 @@ const SocialStrip = () => {
 
   return (
     <>
-      <motion.section 
+      <Motion.section 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
@@ -85,7 +116,7 @@ const SocialStrip = () => {
       >
         <ul className="flex items-center space-x-4">
           {socialLinks.map((social, index) => (
-            <motion.li
+            <Motion.li
               key={social.label}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -97,25 +128,10 @@ const SocialStrip = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block transition-all duration-300 ease-out hover:scale-110"
-                  style={{ 
-                    padding: '12px',
-                    borderRadius: '12px',
-                    border: `1px solid ${colors.border.light}`,
-                    color: colors.text.secondary,
-                    backgroundColor: colors.background.tertiary,
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = colors.text.primary;
-                    e.target.style.backgroundColor = colors.primary[400];
-                    e.target.style.boxShadow = `0 8px 24px ${colors.opacity['20']}`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = colors.text.secondary;
-                    e.target.style.backgroundColor = colors.background.tertiary;
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  style={socialButtonStyle}
+                  onClick={handleExternalLink(social.href)}
+                  onMouseEnter={handleSocialEnter}
+                  onMouseLeave={handleSocialLeave}
                   aria-label={`打开${social.label}主页`}
                 >
                   <social.icon />
@@ -124,24 +140,9 @@ const SocialStrip = () => {
                 <button
                   onClick={social.label === '微信' ? handleWechatClick : handleEmailClick}
                   className="block transition-all duration-300 ease-out hover:scale-110"
-                  style={{ 
-                    padding: '12px',
-                    borderRadius: '12px',
-                    border: `1px solid ${colors.border.light}`,
-                    color: colors.text.secondary,
-                    backgroundColor: colors.background.tertiary,
-                    cursor: 'pointer',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = colors.text.primary;
-                    e.target.style.backgroundColor = colors.primary[400];
-                    e.target.style.boxShadow = `0 8px 24px ${colors.opacity['20']}`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = colors.text.secondary;
-                    e.target.style.backgroundColor = colors.background.tertiary;
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  style={{ ...socialButtonStyle, cursor: 'pointer' }}
+                  onMouseEnter={handleSocialEnter}
+                  onMouseLeave={handleSocialLeave}
                   aria-label={social.label === '微信' ? "复制微信号" : "复制邮箱地址"}
                 >
                   <social.icon />
@@ -150,38 +151,23 @@ const SocialStrip = () => {
                 <button
                   onClick={handleWechatClick}
                   className="block transition-all duration-300 ease-out hover:scale-110"
-                  style={{ 
-                    padding: '12px',
-                    borderRadius: '12px',
-                    border: `1px solid ${colors.border.light}`,
-                    color: colors.text.secondary,
-                    backgroundColor: colors.background.tertiary,
-                    cursor: 'pointer',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = colors.text.primary;
-                    e.target.style.backgroundColor = colors.primary[400];
-                    e.target.style.boxShadow = `0 8px 24px ${colors.opacity['20']}`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = colors.text.secondary;
-                    e.target.style.backgroundColor = colors.background.tertiary;
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  style={{ ...socialButtonStyle, cursor: 'pointer' }}
+                  onMouseEnter={handleSocialEnter}
+                  onMouseLeave={handleSocialLeave}
                   aria-label="复制微信号"
                 >
                   <social.icon />
                 </button>
               )}
-            </motion.li>
+            </Motion.li>
           ))}
         </ul>
-      </motion.section>
+      </Motion.section>
 
       {/* 微信弹层 */}
       <AnimatePresence>
         {showWechatModal && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -189,7 +175,7 @@ const SocialStrip = () => {
             style={{ backgroundColor: colors.opacity['20'] }}
             onClick={() => setShowWechatModal(false)}
           >
-            <motion.div
+            <Motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -213,7 +199,7 @@ const SocialStrip = () => {
                 >
                   点击按钮复制微信号
                 </p>
-                                 <motion.button
+                                 <Motion.button
                    onClick={handleCopyWechat}
                    className="px-6 py-3 rounded-lg transition-all duration-200"
                    style={{
@@ -227,19 +213,19 @@ const SocialStrip = () => {
                    whileTap={{ scale: 0.98 }}
                  >
                    {copySuccess ? '复制成功' : '复制微信号'}
-                 </motion.button>
+                 </Motion.button>
                  
 
               </div>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
                  )}
        </AnimatePresence>
 
        {/* 邮箱弹层 */}
        <AnimatePresence>
          {showEmailModal && (
-           <motion.div
+           <Motion.div
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              exit={{ opacity: 0 }}
@@ -247,7 +233,7 @@ const SocialStrip = () => {
              style={{ backgroundColor: colors.opacity['20'] }}
              onClick={() => setShowEmailModal(false)}
            >
-             <motion.div
+             <Motion.div
                initial={{ scale: 0.9, opacity: 0 }}
                animate={{ scale: 1, opacity: 1 }}
                exit={{ scale: 0.9, opacity: 0 }}
@@ -271,7 +257,7 @@ const SocialStrip = () => {
                  >
                    点击按钮复制邮箱地址
                  </p>
-                 <motion.button
+                 <Motion.button
                    onClick={handleCopyEmail}
                    className="px-6 py-3 rounded-lg transition-all duration-200"
                    style={{
@@ -285,10 +271,10 @@ const SocialStrip = () => {
                    whileTap={{ scale: 0.98 }}
                  >
                    {copyEmailSuccess ? '复制成功' : '复制邮箱地址'}
-                 </motion.button>
+                 </Motion.button>
                </div>
-             </motion.div>
-           </motion.div>
+             </Motion.div>
+           </Motion.div>
          )}
        </AnimatePresence>
      </>

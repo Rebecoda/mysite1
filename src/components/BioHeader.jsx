@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { colors, typography, spacing } from '../../design-system/tokens/index.js';
 
 const BioHeader = () => {
   return (
-    <motion.section 
+    <Motion.section 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
@@ -12,15 +12,15 @@ const BioHeader = () => {
       style={{ marginBottom: spacing.section }}
     >
       {/* 宣言 - 遵循设计系统 */}
-      <motion.h2 
+      <Motion.h2 
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
         style={{
           color: colors.text.primary,
           fontFamily: typography.fontFamily.sans,
-          fontSize: typography.fontSize['2xl'],
-          fontWeight: typography.fontWeight.light,
+          fontSize: typography.fontSize['3xl'],
+          fontWeight: typography.fontWeight.normal,
           lineHeight: typography.lineHeight.relaxed,
           letterSpacing: typography.letterSpacing.wide,
           maxWidth: '900px',
@@ -29,21 +29,21 @@ const BioHeader = () => {
         }}
       >
         观察世界，认识自我。
-      </motion.h2>
+      </Motion.h2>
       
       {/* 联系信息 - 遵循设计系统 */}
-      <motion.div 
+      <Motion.div 
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.6 }}
         style={{
-          color: colors.text.tertiary,
+          color: colors.text.secondary,
           fontFamily: typography.fontFamily.sans,
-          fontSize: typography.fontSize.lg,
-          fontWeight: typography.fontWeight.light,
+          fontSize: typography.fontSize.xl,
+          fontWeight: typography.fontWeight.normal,
           lineHeight: typography.lineHeight.relaxed,
           letterSpacing: typography.letterSpacing.wider,
-          opacity: 0.7,
+          opacity: 0.95,
           marginBottom: spacing[16],
           padding: '0 24px',
         }}
@@ -54,8 +54,8 @@ const BioHeader = () => {
         <div>
           地区 · 深圳 | 求职意向 · 营销 / 内容运营 / 产品运营（实习）
         </div>
-      </motion.div>
-    </motion.section>
+      </Motion.div>
+    </Motion.section>
   );
 };
 

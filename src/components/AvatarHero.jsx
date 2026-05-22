@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { colors, spacing, typography } from '../../design-system/tokens/index.js';
 
 const AvatarHero = () => {
   return (
-    <motion.section
+    <Motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -15,7 +15,7 @@ const AvatarHero = () => {
         {/* 头像容器 - 包含圆圈动效 */}
         <div className="relative">
           {/* 外圈动效圆环 - 性能优化 */}
-          <motion.div
+          <Motion.div
             className="absolute inset-0 rounded-full"
             style={{
               border: `2px solid ${colors.primary[300]}`,
@@ -33,7 +33,7 @@ const AvatarHero = () => {
           />
           
           {/* 中圈动效圆环 - 性能优化 */}
-          <motion.div
+          <Motion.div
             className="absolute inset-0 rounded-full"
             style={{
               border: `2px solid ${colors.primary[400]}`,
@@ -52,7 +52,7 @@ const AvatarHero = () => {
           />
           
           {/* 内圈动效圆环 - 性能优化 */}
-          <motion.div
+          <Motion.div
             className="absolute inset-0 rounded-full"
             style={{
               border: `2px solid ${colors.primary[500]}`,
@@ -71,7 +71,7 @@ const AvatarHero = () => {
           />
           
           {/* 圆形头像 - 遵循设计系统 */}
-          <motion.div
+          <Motion.div
             className="relative w-36 h-36 rounded-full overflow-hidden"
             style={{
               border: `2px solid ${colors.border.light}`,
@@ -114,11 +114,11 @@ const AvatarHero = () => {
               潘
             </span>
           </div>
-        </motion.div>
+        </Motion.div>
         </div>
 
         {/* 名字 - 遵循设计系统排版 */}
-        <motion.h1
+        <Motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -133,9 +133,9 @@ const AvatarHero = () => {
           }}
         >
           Rebecca Pan
-        </motion.h1>
+        </Motion.h1>
       </div>
-    </motion.section>
+    </Motion.section>
   );
 };
 

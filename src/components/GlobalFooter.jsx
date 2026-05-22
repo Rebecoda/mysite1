@@ -1,19 +1,17 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { colors, typography, textStyles, spacing } from '../../design-system/tokens/index.js';
+import { motion as Motion } from 'framer-motion';
+import { colors, typography, spacing } from '../../design-system/tokens/index.js';
 
 const GlobalFooter = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <motion.footer 
+    <Motion.footer 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.4 }}
       className="border-t pt-8"
       style={{ 
         borderColor: colors.border.light,
-        marginTop: spacing[8], // 与联系我组件保持统一间距
+        marginTop: spacing[8],
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,11 +19,11 @@ const GlobalFooter = () => {
           <p 
             className="mb-4"
             style={{ 
-              color: colors.text.tertiary,
+              color: colors.text.secondary,
               fontFamily: typography.fontFamily.sans,
-              fontSize: typography.fontSize.sm,
-              fontWeight: typography.fontWeight.light,
-              lineHeight: typography.lineHeight.label,
+              fontSize: typography.fontSize.lg,
+              fontWeight: typography.fontWeight.normal,
+              lineHeight: typography.lineHeight.body,
             }}
           >
             © 2025 潘雍静（Rebecca） · 深圳 · 联系：13392871283@163.com
@@ -33,19 +31,19 @@ const GlobalFooter = () => {
           
           <p 
             style={{ 
-              color: colors.text.tertiary,
+              color: colors.text.secondary,
               fontFamily: typography.fontFamily.sans,
-              fontSize: typography.fontSize.xs,
-              fontWeight: typography.fontWeight.light,
-              lineHeight: typography.lineHeight.label,
-              opacity: 0.6,
+              fontSize: typography.fontSize.md,
+              fontWeight: typography.fontWeight.normal,
+              lineHeight: typography.lineHeight.body,
+              opacity: 0.9,
             }}
           >
             简历仅供参考，转载请联系作者。
           </p>
         </div>
       </div>
-    </motion.footer>
+    </Motion.footer>
   );
 };
 

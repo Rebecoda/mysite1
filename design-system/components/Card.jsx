@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { tv } from 'tailwind-variants';
-import { colors, typography } from '../tokens/index.js';
+import { typography } from '../tokens/index.js';
 
 // 基于设计稿的卡片变体
 const cardVariants = tv({
@@ -59,7 +59,7 @@ const Card = React.forwardRef(({
 
   if (isInteractive) {
     return (
-      <motion.div
+      <Motion.div
         ref={ref}
         className={cardClasses}
         onClick={onClick}
@@ -69,7 +69,7 @@ const Card = React.forwardRef(({
         {...props}
       >
         {children}
-      </motion.div>
+      </Motion.div>
     );
   }
 

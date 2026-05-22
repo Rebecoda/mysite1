@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { tv } from 'tailwind-variants';
 import { Eye, EyeSlash } from 'phosphor-react';
-import { colors, typography } from '../tokens/index.js';
+import { typography } from '../tokens/index.js';
 
 // 基于设计稿的输入框变体
 const inputVariants = tv({
@@ -63,7 +63,6 @@ const Input = React.forwardRef(({
   ...props
 }, ref) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
 
   // 确定最终变体
   const finalVariant = error ? 'error' : success ? 'success' : variant;
@@ -91,7 +90,7 @@ const Input = React.forwardRef(({
           </div>
         )}
         
-        <motion.input
+        <Motion.input
           ref={ref}
           type={inputType}
           className={inputClasses}
@@ -102,8 +101,6 @@ const Input = React.forwardRef(({
             fontWeight: typography.fontWeight.light,
           }}
           disabled={disabled}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           {...props}
         />
         
@@ -125,25 +122,25 @@ const Input = React.forwardRef(({
       </div>
       
       {error && (
-        <motion.p
+        <Motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-1 text-sm text-status-error-500"
           style={{ fontFamily: typography.fontFamily.sans }}
         >
           {error}
-        </motion.p>
+        </Motion.p>
       )}
       
       {success && !error && (
-        <motion.p
+        <Motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-1 text-sm text-status-success-500"
           style={{ fontFamily: typography.fontFamily.sans }}
         >
           {success}
-        </motion.p>
+        </Motion.p>
       )}
     </div>
   );

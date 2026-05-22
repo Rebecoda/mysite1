@@ -69,7 +69,7 @@ const PortfolioGallery = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.0 }}
       style={{ 
-        marginBottom: spacing[16], // 与联系我组件保持统一间距
+        marginBottom: spacing[16],
         marginTop: spacing[8], // 与工作经历保持适当距离
       }}
     >
