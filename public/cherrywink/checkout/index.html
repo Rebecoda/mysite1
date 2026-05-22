@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cherry Wink — Checkout</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-base-path="..">
+    <div class="announcement">
+      <div class="container announcement-inner">
+        <span>Checkout placeholder</span>
+        <span>No payments connected</span>
+        <span>Built for phase-one demo only</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="nav-links nav-left" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../collections/all/index.html">Shop All</a>
+          <a href="../about/index.html">About</a>
+          <a href="../faq/index.html">FAQ</a>
+        </nav>
+        <a class="brand" href="../index.html" aria-label="Cherry Wink home">
+          <span>Cherry Wink</span>
+          <small>hair accessories</small>
+        </a>
+        <div class="header-actions">
+          <a href="../cart/index.html">Cart</a>
+          <a href="../collections/all/index.html">Continue Shopping</a>
+          <button data-open-cart>Cart (<span data-cart-count>0</span>)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head container page-head-left">
+        <p class="eyebrow">Checkout</p>
+        <h1>Checkout placeholder</h1>
+        <p>This page exists to complete the demo flow and show what a next-stage real checkout integration would hang off.</p>
+      </section>
+
+      <section class="container checkout-layout">
+        <div class="checkout-panel">
+          <div class="checkout-block">
+            <p class="eyebrow">Step 1</p>
+            <h2>Contact</h2>
+            <div class="form-grid">
+              <input placeholder="Email address" />
+              <input placeholder="Phone number" />
+            </div>
+          </div>
+          <div class="checkout-block">
+            <p class="eyebrow">Step 2</p>
+            <h2>Shipping</h2>
+            <div class="form-grid two-up">
+              <input placeholder="First name" />
+              <input placeholder="Last name" />
+              <input placeholder="Address" class="span-2" />
+              <input placeholder="City" />
+              <input placeholder="Postal code" />
+            </div>
+          </div>
+          <div class="checkout-block">
+            <p class="eyebrow">Step 3</p>
+            <h2>Payment</h2>
+            <p class="checkout-note">For now this is intentionally non-functional. In a later phase this becomes Shopify checkout, Stripe, or a proper payment handoff.</p>
+            <button class="checkout-button" type="button">Place order</button>
+          </div>
+        </div>
+
+        <aside class="checkout-summary-card">
+          <p class="eyebrow">Summary</p>
+          <h2>Why this page matters</h2>
+          <ul>
+            <li>Completes the browse → cart → checkout journey</li>
+            <li>Makes the prototype feel like a real store</li>
+            <li>Creates a clearer handoff point for Shopify or custom integration</li>
+          </ul>
+          <div class="summary-row">
+            <span>Cart items</span>
+            <strong><span data-cart-count>0</span></strong>
+          </div>
+          <a class="secondary-button block-link" href="../cart/index.html">Back to cart</a>
+        </aside>
+      </section>
+    </main>
+
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-block">
+          <h3>Keep in touch</h3>
+          <p>Sign up for launches, special edits, and first access to new drops.</p>
+          <div class="newsletter">
+            <input aria-label="Enter your email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer-block">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="../collections/all/index.html">Shop All</a></li>
+            <li><a href="../products/index.html?slug=big-bloom-clip">Product Detail</a></li>
+            <li><a href="../cart/index.html">Cart</a></li>
+            <li><a href="../faq/index.html">Shipping</a></li>
+          </ul>
+        </div>
+        <div class="footer-block">
+          <h3>Info</h3>
+          <ul>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../faq/index.html">FAQ</a></li>
+            <li><a href="../about/index.html">Contact</a></li>
+            <li><a href="../collections/all/index.html">Gift Edit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <div>Cherry Wink prototype · checkout placeholder</div>
+        <div>All content in English · all prices in $</div>
+      </div>
+    </footer>
+
+    <div class="cart-backdrop"></div>
+    <aside class="cart-drawer" aria-label="shopping cart">
+      <div class="cart-head">
+        <div class="cart-title-row">
+          <div>
+            <h2>Your cart</h2>
+            <p>A working local cart for demo purposes.</p>
+          </div>
+          <button class="close-button" data-close-cart type="button">Close</button>
+        </div>
+      </div>
+      <div class="cart-items" data-drawer-items></div>
+      <div class="cart-foot">
+        <div class="subtotal-row">
+          <div>
+            <h3>Subtotal</h3>
+            <p>Local storage only — no real checkout attached yet.</p>
+          </div>
+          <strong data-drawer-subtotal>$0</strong>
+        </div>
+        <a class="checkout-button button-link" href="../checkout/index.html">Checkout</a>
+      </div>
+    </aside>
+
+    <script src="../assets/catalog.js"></script>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

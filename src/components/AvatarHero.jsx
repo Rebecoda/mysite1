@@ -11,18 +11,76 @@ const AvatarHero = () => {
       style={{ marginBottom: spacing.section }}
       className="text-center"
     >
-      <div className="flex flex-col items-center space-y-6">
-        {/* 圆形头像 - 遵循设计系统 */}
-        <motion.div
-          className="w-32 h-32 rounded-full overflow-hidden"
-          style={{
-            border: `1px solid ${colors.border.light}`,
-            backgroundColor: colors.background.tertiary,
-            boxShadow: `0 0 0 1px ${colors.opacity['12']}`,
-          }}
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.18, ease: "ease-out" }}
-        >
+      <div className="flex flex-col items-center space-y-8">
+        {/* 头像容器 - 包含圆圈动效 */}
+        <div className="relative">
+          {/* 外圈动效圆环 - 性能优化 */}
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            style={{
+              border: `2px solid ${colors.primary[300]}`,
+              opacity: 0.6,
+            }}
+            animate={{
+              scale: [1, 1.15, 1],
+              opacity: [0.6, 0.4, 0.6],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* 中圈动效圆环 - 性能优化 */}
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            style={{
+              border: `2px solid ${colors.primary[400]}`,
+              opacity: 0.4,
+            }}
+            animate={{
+              scale: [1, 1.25, 1],
+              opacity: [0.4, 0.2, 0.4],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1.5,
+            }}
+          />
+          
+          {/* 内圈动效圆环 - 性能优化 */}
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            style={{
+              border: `2px solid ${colors.primary[500]}`,
+              opacity: 0.5,
+            }}
+            animate={{
+              scale: [1, 1.08, 1],
+              opacity: [0.5, 0.3, 0.5],
+            }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.8,
+            }}
+          />
+          
+          {/* 圆形头像 - 遵循设计系统 */}
+          <motion.div
+            className="relative w-36 h-36 rounded-full overflow-hidden"
+            style={{
+              border: `2px solid ${colors.border.light}`,
+              backgroundColor: colors.background.tertiary,
+              boxShadow: `0 8px 32px ${colors.opacity['16']}`,
+            }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: "ease-out" }}
+          >
           {/* 头像图片 - 请将新图片文件放置在此路径 */}
           <img 
             src="/avatar.jpg" 
@@ -49,7 +107,7 @@ const AvatarHero = () => {
               style={{ 
                 color: colors.text.secondary,
                 fontFamily: typography.fontFamily.sans,
-                fontSize: typography.fontSize['5xl'],
+                fontSize: typography.fontSize['6xl'],
                 fontWeight: typography.fontWeight.light,
               }}
             >
@@ -57,6 +115,7 @@ const AvatarHero = () => {
             </span>
           </div>
         </motion.div>
+        </div>
 
         {/* 名字 - 遵循设计系统排版 */}
         <motion.h1
@@ -66,31 +125,15 @@ const AvatarHero = () => {
           style={{
             color: colors.text.primary,
             fontFamily: typography.fontFamily.sans,
-            fontSize: typography.fontSize['5xl'],
+            fontSize: typography.fontSize['6xl'],
             fontWeight: typography.fontWeight.light,
             lineHeight: typography.lineHeight.tight,
             letterSpacing: typography.letterSpacing.tight,
+            marginBottom: '24px',
           }}
         >
-          潘雍静
+          Rebecca Pan
         </motion.h1>
-
-        {/* 副标题 - 遵循设计系统 */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          style={{
-            color: colors.text.secondary,
-            fontFamily: typography.fontFamily.sans,
-            fontSize: typography.fontSize.lg,
-            fontWeight: typography.fontWeight.light,
-            lineHeight: typography.lineHeight.body,
-            letterSpacing: typography.letterSpacing.wide,
-          }}
-        >
-          Rebecca
-        </motion.p>
       </div>
     </motion.section>
   );

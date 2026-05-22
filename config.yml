@@ -1,0 +1,7 @@
+tunnel: 6af9d97c-aeb1-4aba-ae7a-a253a8c6f0c6
+credentials-file: /Users/rebeccapan/.cloudflared/6af9d97c-aeb1-4aba-ae7a-a253a8c6f0c6.json
+
+ingress:
+  - hostname: dev.rebeccapan.space
+    service: http://localhost:5173
+  - service: http_status:404

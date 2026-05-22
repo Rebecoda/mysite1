@@ -96,54 +96,82 @@ const SocialStrip = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block p-2 rounded-lg transition-all duration-200 hover:scale-105"
+                  className="block transition-all duration-300 ease-out hover:scale-110"
                   style={{ 
+                    padding: '12px',
+                    borderRadius: '12px',
+                    border: `1px solid ${colors.border.light}`,
                     color: colors.text.secondary,
                     backgroundColor: colors.background.tertiary,
+                    textDecoration: 'none',
+                    display: 'block',
                   }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    color: colors.text.primary,
-                    backgroundColor: colors.primary[400],
+                  onMouseEnter={(e) => {
+                    e.target.style.color = colors.text.primary;
+                    e.target.style.backgroundColor = colors.primary[400];
+                    e.target.style.boxShadow = `0 8px 24px ${colors.opacity['20']}`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = colors.text.secondary;
+                    e.target.style.backgroundColor = colors.background.tertiary;
+                    e.target.style.boxShadow = 'none';
                   }}
                   aria-label={`打开${social.label}主页`}
                 >
                   <social.icon />
                 </a>
               ) : social.action === 'copy' ? (
-                <motion.button
+                <button
                   onClick={social.label === '微信' ? handleWechatClick : handleEmailClick}
-                  className="block p-2 rounded-lg transition-all duration-200"
+                  className="block transition-all duration-300 ease-out hover:scale-110"
                   style={{ 
+                    padding: '12px',
+                    borderRadius: '12px',
+                    border: `1px solid ${colors.border.light}`,
                     color: colors.text.secondary,
                     backgroundColor: colors.background.tertiary,
+                    cursor: 'pointer',
                   }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    color: colors.text.primary,
-                    backgroundColor: colors.primary[400],
+                  onMouseEnter={(e) => {
+                    e.target.style.color = colors.text.primary;
+                    e.target.style.backgroundColor = colors.primary[400];
+                    e.target.style.boxShadow = `0 8px 24px ${colors.opacity['20']}`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = colors.text.secondary;
+                    e.target.style.backgroundColor = colors.background.tertiary;
+                    e.target.style.boxShadow = 'none';
                   }}
                   aria-label={social.label === '微信' ? "复制微信号" : "复制邮箱地址"}
                 >
                   <social.icon />
-                </motion.button>
+                </button>
               ) : (
-                <motion.button
+                <button
                   onClick={handleWechatClick}
-                  className="block p-2 rounded-lg transition-all duration-200"
+                  className="block transition-all duration-300 ease-out hover:scale-110"
                   style={{ 
+                    padding: '12px',
+                    borderRadius: '12px',
+                    border: `1px solid ${colors.border.light}`,
                     color: colors.text.secondary,
                     backgroundColor: colors.background.tertiary,
+                    cursor: 'pointer',
                   }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    color: colors.text.primary,
-                    backgroundColor: colors.primary[400],
+                  onMouseEnter={(e) => {
+                    e.target.style.color = colors.text.primary;
+                    e.target.style.backgroundColor = colors.primary[400];
+                    e.target.style.boxShadow = `0 8px 24px ${colors.opacity['20']}`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = colors.text.secondary;
+                    e.target.style.backgroundColor = colors.background.tertiary;
+                    e.target.style.boxShadow = 'none';
                   }}
                   aria-label="复制微信号"
                 >
                   <social.icon />
-                </motion.button>
+                </button>
               )}
             </motion.li>
           ))}

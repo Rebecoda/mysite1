@@ -19,15 +19,16 @@ const BioHeader = () => {
         style={{
           color: colors.text.primary,
           fontFamily: typography.fontFamily.sans,
-          fontSize: typography.fontSize.xl,
+          fontSize: typography.fontSize['2xl'],
           fontWeight: typography.fontWeight.light,
-          lineHeight: typography.lineHeight.body,
+          lineHeight: typography.lineHeight.relaxed,
           letterSpacing: typography.letterSpacing.wide,
-          maxWidth: '800px',
-          margin: '0 auto 24px',
+          maxWidth: '900px',
+          margin: '0 auto 32px',
+          padding: '0 24px',
         }}
       >
-        数据驱动的增长与内容运营，擅长私域转化与品牌传播。
+        观察世界，认识自我。
       </motion.h2>
       
       {/* 联系信息 - 遵循设计系统 */}
@@ -38,16 +39,21 @@ const BioHeader = () => {
         style={{
           color: colors.text.tertiary,
           fontFamily: typography.fontFamily.sans,
-          fontSize: typography.fontSize.sm,
+          fontSize: typography.fontSize.lg,
           fontWeight: typography.fontWeight.light,
-          lineHeight: typography.lineHeight.label,
+          lineHeight: typography.lineHeight.relaxed,
           letterSpacing: typography.letterSpacing.wider,
-          opacity: 0.6,
-          marginBottom: spacing[16], // 增加底部间距，与社交图标保持统一距离
+          opacity: 0.7,
+          marginBottom: spacing[16],
+          padding: '0 24px',
         }}
       >
-        电话 · 13392871283（微信同号） | 邮箱 · 13392871283@163.com<br />
-        地区 · 深圳 | 求职意向 · 营销 / 内容运营 / 产品运营（实习）
+        <div style={{ marginBottom: '16px' }}>
+          电话 · 13392871283（微信同号） | 邮箱 · 13392871283@163.com
+        </div>
+        <div>
+          地区 · 深圳 | 求职意向 · 营销 / 内容运营 / 产品运营（实习）
+        </div>
       </motion.div>
     </motion.section>
   );

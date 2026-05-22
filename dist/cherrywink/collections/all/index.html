@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cherry Wink — Shop All</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+  </head>
+  <body data-base-path="../..">
+    <div class="announcement">
+      <div class="container announcement-inner">
+        <span>Spring drop is live</span>
+        <span>Worldwide shipping available</span>
+        <span>Soft essentials for every day</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="nav-links nav-left" aria-label="Primary">
+          <a href="../../index.html">Home</a>
+          <a href="../all/index.html">Shop All</a>
+          <a href="../../about/index.html">About</a>
+          <a href="../../faq/index.html">FAQ</a>
+        </nav>
+
+        <a class="brand" href="../../index.html" aria-label="Cherry Wink home">
+          <span>Cherry Wink</span>
+          <small>hair accessories</small>
+        </a>
+
+        <div class="header-actions">
+          <a href="../../products/index.html?slug=big-bloom-clip">Featured Product</a>
+          <a href="../../cart/index.html">Bag</a>
+          <button data-open-cart>Cart (<span data-cart-count>0</span>)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head container">
+        <p class="eyebrow">Collection</p>
+        <h1>Shop All</h1>
+        <p>
+          Heaven-sent hair essentials with a cleaner, softer point of view — now connected to a simple demo cart and product flow.
+        </p>
+      </section>
+
+      <section class="toolbar">
+        <div class="container toolbar-inner toolbar-stacked">
+          <div class="filter-inline category-inline">
+            <span class="toolbar-label">Browse</span>
+            <a class="chip is-active" href="../all/index.html">All</a>
+            <a class="chip" href="../../products/index.html?slug=big-bloom-clip">Hero Product</a>
+            <a class="chip" href="../../cart/index.html">Cart</a>
+            <a class="chip" href="../../checkout/index.html">Checkout</a>
+          </div>
+
+          <div class="toolbar-row">
+            <div class="filter-inline">
+              <span class="toolbar-label">Color</span>
+              <button class="chip is-active" data-color-filter="all" type="button"><span class="color-dot" style="background:#f6f1ec"></span>All</button>
+              <button class="chip" data-color-filter="pink-sugar" type="button"><span class="color-dot" style="background:#edd9d6"></span>Pink Sugar</button>
+              <button class="chip" data-color-filter="buttercream" type="button"><span class="color-dot" style="background:#f2ebe4"></span>Buttercream</button>
+              <button class="chip" data-color-filter="tortoise" type="button"><span class="color-dot" style="background:#d6c1b0"></span>Tortoise</button>
+              <button class="chip" data-color-filter="cherry-kiss" type="button"><span class="color-dot" style="background:#d7a9a5"></span>Cherry Kiss</button>
+            </div>
+
+            <div class="sort-inline">
+              <button class="filter-button mobile-controls" data-toggle-filters type="button">Filters</button>
+              <span class="toolbar-label">Sort</span>
+              <select class="sort-select" aria-label="Sort products">
+                <option selected>Featured</option>
+                <option>Best selling</option>
+                <option>Alphabetically, A-Z</option>
+                <option>Price, low to high</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="collection container" id="shop">
+        <aside class="filters">
+          <div class="filter-group">
+            <h3>Category</h3>
+            <label><input checked type="checkbox" /> All accessories</label>
+            <label><input type="checkbox" /> Claw clips</label>
+            <label><input type="checkbox" /> Bows</label>
+            <label><input type="checkbox" /> Hair ties</label>
+            <label><input type="checkbox" /> Bracelets</label>
+          </div>
+
+          <div class="filter-group">
+            <h3>Finish</h3>
+            <label><input checked type="checkbox" /> Glossy</label>
+            <label><input type="checkbox" /> Satin</label>
+            <label><input type="checkbox" /> Pearly</label>
+            <label><input type="checkbox" /> Tortoise</label>
+          </div>
+        </aside>
+
+        <div class="product-meta-row">
+          <span data-product-count>0 products</span>
+          <span>Collection grid · quick add · working local cart</span>
+        </div>
+
+        <div class="product-grid" data-product-grid></div>
+
+        <div class="pagination">
+          <span class="is-current">1</span>
+          <a href="../../faq/index.html">FAQ</a>
+          <a href="../../checkout/index.html">Checkout</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-block">
+          <h3>Keep in touch</h3>
+          <p>Sign up for launches, special edits, and first access to new drops.</p>
+          <div class="newsletter">
+            <input aria-label="Enter your email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer-block">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="../all/index.html">Shop All</a></li>
+            <li><a href="../../products/index.html?slug=big-bloom-clip">Product Detail</a></li>
+            <li><a href="../../cart/index.html">Cart</a></li>
+            <li><a href="../../checkout/index.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="footer-block">
+          <h3>Info</h3>
+          <ul>
+            <li><a href="../../about/index.html">About</a></li>
+            <li><a href="../../faq/index.html">FAQ</a></li>
+            <li><a href="../../cart/index.html">Returns</a></li>
+            <li><a href="../../about/index.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <div>Cherry Wink prototype · phase-one store demo skeleton</div>
+        <div>All content in English · all prices in $</div>
+      </div>
+    </footer>
+
+    <div class="cart-backdrop"></div>
+    <aside class="cart-drawer" aria-label="shopping cart">
+      <div class="cart-head">
+        <div class="cart-title-row">
+          <div>
+            <h2>Your cart</h2>
+            <p>A working local cart for demo purposes.</p>
+          </div>
+          <button class="close-button" data-close-cart type="button">Close</button>
+        </div>
+      </div>
+
+      <div class="cart-items" data-drawer-items></div>
+
+      <div class="cart-foot">
+        <div class="subtotal-row">
+          <div>
+            <h3>Subtotal</h3>
+            <p>Local storage only — no real checkout attached yet.</p>
+          </div>
+          <strong data-drawer-subtotal>$0</strong>
+        </div>
+        <a class="checkout-button button-link" href="../../checkout/index.html">Checkout</a>
+      </div>
+    </aside>
+
+    <script src="../../assets/catalog.js"></script>
+    <script src="../../assets/app.js"></script>
+  </body>
+</html>

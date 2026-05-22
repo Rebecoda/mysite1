@@ -36,7 +36,38 @@ const ContactSection = () => {
         marginTop: spacing[8], // 与作品集保持适当距离
       }}
     >
-      <h2 style={textStyles.h2} className="text-center mb-12">联系我</h2>
+      <motion.div 
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        <motion.h2 
+          className="inline-block px-12 py-6 rounded-3xl cursor-pointer relative overflow-hidden"
+          style={{
+            ...textStyles.h2,
+            color: colors.text.primary,
+            backgroundColor: colors.background.primary,
+            boxShadow: `0 4px 20px ${colors.opacity['12']}`,
+          }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: `0 12px 40px ${colors.opacity['20']}, 0 4px 20px ${colors.primary[100]}`,
+            y: -4,
+          }}
+          transition={{ duration: 0.4, ease: "ease-out" }}
+        >
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-100 to-transparent opacity-0"
+            style={{ 
+              background: `linear-gradient(90deg, transparent, ${colors.primary[100]}, transparent)`,
+            }}
+            whileHover={{ opacity: 0.3 }}
+            transition={{ duration: 0.4 }}
+          />
+          <span className="relative z-10">联系我</span>
+        </motion.h2>
+      </motion.div>
       
       <div className="max-w-2xl mx-auto">
         <div 

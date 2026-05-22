@@ -1,0 +1,21 @@
+<svg width="1200" height="1440" viewBox="0 0 1200 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1440" fill="#FFFFFF"/>
+  <ellipse cx="600" cy="1086" rx="232" ry="36" fill="#EDDED6" fill-opacity="0.44"/>
+  <g filter="url(#shadow)">
+    <path d="M287 614C287 470 453 375 604 508C755 375 921 470 921 614C921 773 776 810 662 728L640 972H568L546 728C432 810 287 773 287 614Z" fill="url(#bow)"/>
+    <path d="M604 564C660 564 706 610 706 666C706 722 660 768 604 768C548 768 502 722 502 666C502 610 548 564 604 564Z" fill="#FFFFFF" fill-opacity="0.54"/>
+    <rect x="540" y="612" width="128" height="142" rx="42" fill="#F9F7F4"/>
+    <rect x="560" y="748" width="32" height="268" rx="16" fill="#D9C2B6"/>
+    <rect x="608" y="748" width="32" height="248" rx="16" fill="#CFAF9D"/>
+  </g>
+  <defs>
+    <linearGradient id="bow" x1="604" y1="460" x2="604" y2="1016" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.4" stop-color="#F9F7F4"/>
+      <stop offset="1" stop-color="#EDDED6"/>
+    </linearGradient>
+    <filter id="shadow" x="220" y="420" width="760" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#B6907E" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+</svg>

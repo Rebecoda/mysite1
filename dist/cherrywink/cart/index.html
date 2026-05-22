@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cherry Wink — Cart</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-base-path="..">
+    <div class="announcement">
+      <div class="container announcement-inner">
+        <span>Cart demo</span>
+        <span>Local storage enabled</span>
+        <span>No real payments connected</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="nav-links nav-left" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../collections/all/index.html">Shop All</a>
+          <a href="../about/index.html">About</a>
+          <a href="../faq/index.html">FAQ</a>
+        </nav>
+        <a class="brand" href="../index.html" aria-label="Cherry Wink home">
+          <span>Cherry Wink</span>
+          <small>hair accessories</small>
+        </a>
+        <div class="header-actions">
+          <a href="../collections/all/index.html">Continue Shopping</a>
+          <a href="../checkout/index.html">Checkout</a>
+          <button data-open-cart>Cart (<span data-cart-count>0</span>)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head container page-head-left">
+        <p class="eyebrow">Cart</p>
+        <h1>Your bag</h1>
+        <p>A fuller cart page makes the prototype feel much more like a real independent store demo.</p>
+      </section>
+
+      <section class="container cart-page-layout">
+        <div class="cart-page-items" data-cart-page-items></div>
+        <aside class="cart-summary-card">
+          <p class="eyebrow">Summary</p>
+          <h2>Order summary</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong data-cart-page-subtotal>$0</strong>
+          </div>
+          <div class="summary-row muted">
+            <span>Shipping</span>
+            <span>Calculated at checkout</span>
+          </div>
+          <div class="summary-row muted">
+            <span>Demo note</span>
+            <span>Stored locally in your browser only.</span>
+          </div>
+          <a class="checkout-button button-link" href="../checkout/index.html">Proceed to checkout</a>
+          <a class="secondary-button block-link" href="../collections/all/index.html">Continue shopping</a>
+        </aside>
+      </section>
+    </main>
+
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-block">
+          <h3>Keep in touch</h3>
+          <p>Sign up for launches, special edits, and first access to new drops.</p>
+          <div class="newsletter">
+            <input aria-label="Enter your email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer-block">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="../collections/all/index.html">Shop All</a></li>
+            <li><a href="../products/index.html?slug=big-bloom-clip">Product Detail</a></li>
+            <li><a href="../checkout/index.html">Checkout</a></li>
+            <li><a href="../faq/index.html">Shipping</a></li>
+          </ul>
+        </div>
+        <div class="footer-block">
+          <h3>Info</h3>
+          <ul>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../faq/index.html">FAQ</a></li>
+            <li><a href="../about/index.html">Contact</a></li>
+            <li><a href="../collections/all/index.html">Gift Edit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <div>Cherry Wink prototype · cart page demo</div>
+        <div>All content in English · all prices in $</div>
+      </div>
+    </footer>
+
+    <div class="cart-backdrop"></div>
+    <aside class="cart-drawer" aria-label="shopping cart">
+      <div class="cart-head">
+        <div class="cart-title-row">
+          <div>
+            <h2>Your cart</h2>
+            <p>A working local cart for demo purposes.</p>
+          </div>
+          <button class="close-button" data-close-cart type="button">Close</button>
+        </div>
+      </div>
+      <div class="cart-items" data-drawer-items></div>
+      <div class="cart-foot">
+        <div class="subtotal-row">
+          <div>
+            <h3>Subtotal</h3>
+            <p>Local storage only — no real checkout attached yet.</p>
+          </div>
+          <strong data-drawer-subtotal>$0</strong>
+        </div>
+        <a class="checkout-button button-link" href="../checkout/index.html">Checkout</a>
+      </div>
+    </aside>
+
+    <script src="../assets/catalog.js"></script>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

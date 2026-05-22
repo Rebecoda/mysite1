@@ -1,0 +1,23 @@
+<svg width="1200" height="1440" viewBox="0 0 1200 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1440" fill="#FFFFFF"/>
+  <ellipse cx="600" cy="1032" rx="220" ry="34" fill="#ECD7D8" fill-opacity="0.26"/>
+  <g filter="url(#shadow)">
+    <path d="M600 470C749 470 870 591 870 740C870 889 749 1010 600 1010C451 1010 330 889 330 740C330 591 451 470 600 470Z" fill="#FBF5F6"/>
+    <path d="M600 518C722 518 822 618 822 740C822 862 722 962 600 962C478 962 378 862 378 740C378 618 478 518 600 518Z" fill="#FFFFFF"/>
+    <path d="M406 640C458 570 532 528 600 528C668 528 742 570 794 640C747 618 695 606 640 606C610 606 584 622 566 646C548 622 522 606 492 606C438 606 438 606 406 640Z" fill="#ECD7D8"/>
+    <path d="M394 838C446 908 520 950 600 950C680 950 754 908 806 838C754 862 702 874 644 874C612 874 584 856 566 830C548 856 520 874 488 874C430 874 430 874 394 838Z" fill="#EDDED6"/>
+    <g fill="#ECD7D8">
+      <ellipse cx="438" cy="736" rx="52" ry="118"/>
+      <ellipse cx="762" cy="736" rx="52" ry="118"/>
+      <ellipse cx="516" cy="566" rx="46" ry="84" transform="rotate(-32 516 566)"/>
+      <ellipse cx="686" cy="566" rx="46" ry="84" transform="rotate(32 686 566)"/>
+      <ellipse cx="516" cy="914" rx="46" ry="84" transform="rotate(32 516 914)"/>
+      <ellipse cx="686" cy="914" rx="46" ry="84" transform="rotate(-32 686 914)"/>
+    </g>
+  </g>
+  <defs>
+    <filter id="shadow" x="290" y="440" width="620" height="620" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#B6907E" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+</svg>

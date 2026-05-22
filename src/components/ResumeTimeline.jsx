@@ -1,9 +1,22 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { colors, typography, textStyles, spacing } from '../../design-system/tokens/index.js';
 
 const ResumeTimeline = () => {
-  const timelineData = [
+  const experienceData = [
+    {
+      year: '2026.04 – 至今',
+      title: '海外广告优化师',
+      company: '上海飞书深诺数字科技集团股份有限公司',
+      background: '负责 Anker 旗下 eufyMake 海外市场广告投放，目标是提升品牌曝光、用户注册与高意向转化，覆盖美、欧、澳等区域，主要渠道为 Google Ads 与 Meta Ads。',
+      achievements: [
+        '将受众分为 M2（冷流量）与 M3（高意向），基于不同 Funnel 结构调整兴趣标签、相似受众及再营销策略，实现流量分层运营与精准承接。',
+        '动态优化预算、出价及广告形式（Search、PMax、Reels、Feed），控制 CPC $0.25-$1.04，同时提升 CPSession $0.60-$2.15、CPATC $111-$143。',
+        '开展素材测试与策略迭代，结合静态图、视频及利益点/场景化创意优化广告表现，使 ATC CVR 提升至 0.56%-1.19%。',
+        '从受众、素材、渠道、素材 x 人群维度，结合 CPsession、Cost、ROAS 等关键指标展开分析，并与客户进行周/月度复盘。',
+        '持续优化投放结构与受众匹配，强化 M3 成交效率与 M2 拉新能力，推动整体转化链路稳定提升。'
+      ]
+    },
     {
       year: '2025.04 – 2025.07',
       title: '内容营销实习生',
@@ -39,135 +52,193 @@ const ResumeTimeline = () => {
   ];
 
   return (
-    <motion.section 
+    <Motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8 }}
-      style={{ 
-        marginBottom: spacing[16], // 与作品集保持统一间距
-        marginTop: spacing[8], // 与社交图标保持适当距离
+      style={{
+        marginBottom: spacing[16],
+        marginTop: spacing[8],
       }}
     >
-      <h2 style={textStyles.h2} className="text-center mb-12">工作经历</h2>
-      
-      <div className="max-w-4xl mx-auto">
-        <div className="relative">
-          {/* 时间线中心线 */}
-          <div 
-            className="absolute left-1/2 transform -translate-x-px w-px h-full"
-            style={{ backgroundColor: colors.border.light }}
+      <Motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <Motion.h2
+          className="inline-block px-12 py-6 rounded-3xl cursor-pointer relative overflow-hidden"
+          style={{
+            ...textStyles.h2,
+            color: colors.text.primary,
+            backgroundColor: colors.background.primary,
+            boxShadow: `0 4px 20px ${colors.opacity['12']}`,
+          }}
+          whileHover={{
+            scale: 1.04,
+            boxShadow: `0 12px 40px ${colors.opacity['20']}, 0 4px 20px ${colors.primary[100]}`,
+            y: -4,
+          }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
+          <Motion.div
+            className="absolute inset-0 opacity-0"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${colors.primary[100]}, transparent)`,
+            }}
+            whileHover={{ opacity: 0.3 }}
+            transition={{ duration: 0.4 }}
           />
-          
-          {timelineData.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.9 + index * 0.2 }}
-              className={`relative flex items-center mb-12 ${
-                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-              }`}
+          <span className="relative z-10">工作经历</span>
+        </Motion.h2>
+      </Motion.div>
+
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
+          {experienceData.map((item, index) => (
+            <Motion.article
+              key={`${item.company}-${item.year}`}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.92 + index * 0.12, duration: 0.45, ease: 'easeOut' }}
+              whileHover={{
+                y: -10,
+                scale: 1.015,
+                borderColor: colors.border.medium,
+                boxShadow: `0 22px 52px ${colors.opacity['12']}`,
+              }}
+              className="group relative h-full overflow-hidden rounded-lg border cursor-pointer"
+              style={{
+                backgroundColor: colors.background.tertiary,
+                borderColor: colors.border.light,
+                padding: spacing[7],
+                minHeight: '320px',
+                transform: 'translateZ(0)',
+              }}
             >
-              {/* 时间线节点 */}
-              <div 
-                className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2"
-                style={{ 
-                  backgroundColor: colors.background.primary,
-                  borderColor: colors.primary[400]
-                }}
+              <Motion.div
+                className="absolute left-0 right-0 top-0 h-px"
+                style={{ backgroundColor: colors.primary[300] }}
+                initial={{ scaleX: 0.28, opacity: 0.45 }}
+                whileHover={{ scaleX: 1, opacity: 1 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
               />
-              
-              {/* 内容卡片 */}
-              <div 
-                className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}
-              >
-                <motion.div 
-                  className="p-6 rounded-lg border cursor-pointer"
-                  style={{ 
-                    backgroundColor: colors.background.tertiary,
-                    borderColor: colors.border.light
-                  }}
-                  whileHover={{ 
-                    scale: 1.02,
-                    backgroundColor: colors.background.secondary,
-                    boxShadow: `0 4px 12px ${colors.opacity['12']}`,
-                  }}
-                  transition={{ duration: 0.2, ease: "ease-out" }}
-                >
-                  <div 
-                    className="text-sm font-medium mb-2"
-                    style={{ 
-                      color: colors.primary[400],
+
+              <div className="relative z-10 flex h-full flex-col">
+                <div className="mb-7 flex items-start justify-between gap-5">
+                  <div>
+                    <div
+                      className="mb-3"
+                      style={{
+                        ...textStyles.caption,
+                        color: colors.text.tertiary,
+                      }}
+                    >
+                      Experience
+                    </div>
+                    <h3
+                      style={{
+                        color: colors.text.primary,
+                        fontFamily: typography.fontFamily.sans,
+                        fontSize: typography.fontSize['2xl'],
+                        fontWeight: typography.fontWeight.light,
+                        lineHeight: typography.lineHeight.tight,
+                        letterSpacing: typography.letterSpacing.normal,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <Motion.div
+                    className="shrink-0 rounded-lg border px-3 py-2 text-right"
+                    style={{
+                      color: colors.text.secondary,
+                      borderColor: colors.border.light,
+                      backgroundColor: colors.background.primary,
                       fontFamily: typography.fontFamily.sans,
-                      fontSize: typography.fontSize.sm,
+                      fontSize: typography.fontSize.xs,
                       fontWeight: typography.fontWeight.normal,
+                      lineHeight: typography.lineHeight.label,
                       letterSpacing: typography.letterSpacing.wider,
                     }}
+                    whileHover={{
+                      borderColor: colors.border.medium,
+                      color: colors.text.primary,
+                    }}
+                    transition={{ duration: 0.25, ease: 'easeOut' }}
                   >
                     {item.year}
-                  </div>
-                  <h3 
-                    className="text-lg font-semibold mb-2"
-                    style={{ 
-                      color: colors.text.primary,
-                      fontFamily: typography.fontFamily.sans,
-                      fontSize: typography.fontSize['2xl'],
-                      fontWeight: typography.fontWeight.light,
-                      lineHeight: typography.lineHeight.tight,
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <div 
-                    className="text-sm mb-3"
-                    style={{ 
-                      color: colors.text.secondary,
-                      fontFamily: typography.fontFamily.sans,
-                      fontSize: typography.fontSize.md,
-                      fontWeight: typography.fontWeight.light,
-                    }}
-                  >
-                    {item.company}
-                  </div>
-                  <p 
-                    className="text-sm leading-relaxed mb-3"
-                    style={{ 
-                      color: colors.text.tertiary,
-                      fontFamily: typography.fontFamily.sans,
-                      fontSize: typography.fontSize.sm,
-                      fontWeight: typography.fontWeight.light,
-                      lineHeight: typography.lineHeight.body,
-                    }}
-                  >
-                    {item.background}
-                  </p>
-                  {item.achievements.length > 0 && (
-                    <ul className="space-y-1">
-                      {item.achievements.map((achievement, idx) => (
-                        <li 
-                          key={idx}
-                          className="text-sm"
-                          style={{ 
-                            color: colors.text.tertiary,
-                            fontFamily: typography.fontFamily.sans,
-                            fontSize: typography.fontSize.sm,
-                            fontWeight: typography.fontWeight.light,
-                            lineHeight: typography.lineHeight.body,
-                          }}
-                        >
-                          • {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </motion.div>
+                  </Motion.div>
+                </div>
+
+                <div
+                  className="mb-5"
+                  style={{
+                    color: colors.text.secondary,
+                    fontFamily: typography.fontFamily.sans,
+                    fontSize: typography.fontSize.lg,
+                    fontWeight: typography.fontWeight.light,
+                    lineHeight: typography.lineHeight.snug,
+                    letterSpacing: typography.letterSpacing.wide,
+                  }}
+                >
+                  {item.company}
+                </div>
+
+                <p
+                  className="mb-6"
+                  style={{
+                    color: colors.text.tertiary,
+                    fontFamily: typography.fontFamily.sans,
+                    fontSize: typography.fontSize.md,
+                    fontWeight: typography.fontWeight.light,
+                    lineHeight: typography.lineHeight.body,
+                    letterSpacing: typography.letterSpacing.wide,
+                  }}
+                >
+                  {item.background}
+                </p>
+
+                <ul className="mt-auto space-y-3">
+                  {item.achievements.map((achievement) => (
+                    <li key={achievement} className="flex gap-3">
+                      <span
+                        className="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ backgroundColor: colors.primary[300] }}
+                      />
+                      <span
+                        style={{
+                          color: colors.text.secondary,
+                          fontFamily: typography.fontFamily.sans,
+                          fontSize: typography.fontSize.md,
+                          fontWeight: typography.fontWeight.light,
+                          lineHeight: typography.lineHeight.body,
+                          letterSpacing: typography.letterSpacing.wide,
+                        }}
+                      >
+                        {achievement}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </motion.div>
+
+              <Motion.div
+                className="pointer-events-none absolute inset-0 opacity-0"
+                style={{
+                  background: `linear-gradient(135deg, transparent 0%, ${colors.opacity['12']} 100%)`,
+                }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              />
+            </Motion.article>
           ))}
         </div>
       </div>
-    </motion.section>
+    </Motion.section>
   );
 };
 
-export default ResumeTimeline; 
+export default ResumeTimeline;

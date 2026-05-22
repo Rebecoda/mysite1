@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cherry Wink — Product</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-base-path="..">
+    <div class="announcement">
+      <div class="container announcement-inner">
+        <span>Product detail demo</span>
+        <span>Worldwide shipping available</span>
+        <span>Soft essentials for every day</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="nav-links nav-left" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../collections/all/index.html">Shop All</a>
+          <a href="../about/index.html">About</a>
+          <a href="../faq/index.html">FAQ</a>
+        </nav>
+        <a class="brand" href="../index.html" aria-label="Cherry Wink home">
+          <span>Cherry Wink</span>
+          <small>hair accessories</small>
+        </a>
+        <div class="header-actions">
+          <a href="../collections/all/index.html">More Products</a>
+          <a href="../cart/index.html">Bag</a>
+          <button data-open-cart>Cart (<span data-cart-count>0</span>)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head container page-head-left">
+        <p class="eyebrow">Product Detail</p>
+        <h1>Hero product view</h1>
+        <p>This page makes the prototype feel like an actual store instead of a single static collection layout.</p>
+      </section>
+
+      <section class="container product-detail-section" data-product-detail></section>
+
+      <section class="featured-section container related-section">
+        <div class="section-head stacked-left">
+          <p class="eyebrow">You may also like</p>
+          <h2>Related products that keep the catalog feeling browsable.</h2>
+        </div>
+        <div class="product-grid" data-related-grid></div>
+      </section>
+    </main>
+
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-block">
+          <h3>Keep in touch</h3>
+          <p>Sign up for launches, special edits, and first access to new drops.</p>
+          <div class="newsletter">
+            <input aria-label="Enter your email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer-block">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="../collections/all/index.html">Shop All</a></li>
+            <li><a href="../cart/index.html">Cart</a></li>
+            <li><a href="../checkout/index.html">Checkout</a></li>
+            <li><a href="../faq/index.html">Shipping</a></li>
+          </ul>
+        </div>
+        <div class="footer-block">
+          <h3>Info</h3>
+          <ul>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../faq/index.html">FAQ</a></li>
+            <li><a href="../about/index.html">Contact</a></li>
+            <li><a href="../collections/all/index.html">Gift Edit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <div>Cherry Wink prototype · dynamic PDP</div>
+        <div>All content in English · all prices in $</div>
+      </div>
+    </footer>
+
+    <div class="cart-backdrop"></div>
+    <aside class="cart-drawer" aria-label="shopping cart">
+      <div class="cart-head">
+        <div class="cart-title-row">
+          <div>
+            <h2>Your cart</h2>
+            <p>A working local cart for demo purposes.</p>
+          </div>
+          <button class="close-button" data-close-cart type="button">Close</button>
+        </div>
+      </div>
+      <div class="cart-items" data-drawer-items></div>
+      <div class="cart-foot">
+        <div class="subtotal-row">
+          <div>
+            <h3>Subtotal</h3>
+            <p>Local storage only — no real checkout attached yet.</p>
+          </div>
+          <strong data-drawer-subtotal>$0</strong>
+        </div>
+        <a class="checkout-button button-link" href="../checkout/index.html">Checkout</a>
+      </div>
+    </aside>
+
+    <script src="../assets/catalog.js"></script>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>
